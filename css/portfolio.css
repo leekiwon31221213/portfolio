@@ -179,6 +179,7 @@ body {
 
 .skill_inner {
   margin-bottom: 20px;
+  display: none;
 }
 
 .skill_inner > li {
