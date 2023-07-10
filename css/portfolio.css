@@ -1,152 +1,182 @@
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 body {
-    width: 100%;
-    height: 100%;
-    font-size: 1.6rem;
-    font-family: 'Pretendard-Regular';
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+  font-family: "Pretendard-Regular";
 }
 :root {
-    --mainbgcolor: #212125;
-    --subbgcolor: #cdcddb;
-    --maincolor: #a3de83;
-    --subcolor: #f7f39a;
-    --engtitlefont: 'Open Sans', sans-serif;
-    --engsubfont: 'Roboto', sans-serif;
+  --mainbgcolor: #212125;
+  --subbgcolor: #cdcddb;
+  --maincolor: #a3de83;
+  --subcolor: #f7f39a;
+  --engtitlefont: "Open Sans", sans-serif;
+  --engsubfont: "Roboto", sans-serif;
 }
 
-/* section1 PortFolio */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* section common */
 .section1,
-.section1-1 {
-    background-color: var(--mainbgcolor);
-    width: 100%;
-    height: 100%;
-    position: relative;
-    color: #fff;
-}
-.section1.active {
-    animation: rotate-90-vertical-bck 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-@keyframes rotate-90-vertical-bck {
-    0% {
-        transform: rotateY(0);
-    }
-    100% {
-        transform: rotateY(-90deg);
-    }
-}
-.section1-title {
-    width: 100%;
-    height: 100%;
+.section1-1,
+.section2,
+.section2-main {
+  background-color: var(--mainbgcolor);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: #fff;
 }
 
-.section1-title > article {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-}
-
-.section1-title > article > h2 {
-    flex: 1;
-    text-align: center;
-    font-size: 21rem;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px #fff;
-    color: white;
-    font-family: var(--engtitlefont);
-    font-weight: 600;
-    animation: slide-in 1.2s ease-in-out both;
-    white-space: nowrap;
-    opacity: 1;
+.section1-title > article > h2,
+.section2-title {
+  flex: 1;
+  text-align: center;
+  font-size: 21rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  color: white;
+  font-family: var(--engtitlefont);
+  font-weight: 600;
+  animation: slide-in 1.2s ease-in-out both;
+  white-space: nowrap;
+  opacity: 1;
 }
 @keyframes slide-in {
-    0% {
-        letter-spacing: 1em;
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
+  0% {
+    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 @keyframes focus-in-contract {
-    0% {
-        letter-spacing: 1em;
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
+  0% {
+    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 
-.section1-btn {
-    color: #fff;
-    margin-right: 20px;
+.section1-title > article,
+.section2-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
-.section1 .mouse-icon {
-    width: 2px;
-    padding: 4px 12px;
-    height: 32px;
-    border: 2px solid #fcfdfe;
-    border-radius: 12px;
-    opacity: 0.5;
-    box-sizing: content-box;
-    position: absolute;
-    top: 36%;
+.section1-next-btn,
+.section2-next-btn,
+.section2-pre-btn {
+  color: #fff;
 }
 
-.section1 .mouse-wheel {
-    display: inline-block;
-    height: 15px;
-    background-color: #fff;
-    width: 2px;
-    animation: scroll 2s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
-    margin-top: 3px;
+.section1-next-btn,
+.section2-next-btn {
+  margin-right: 20px;
+}
+
+.section2-pre-btn {
+  margin-left: 20px;
+}
+
+.mouse-icon {
+  width: 2px;
+  padding: 4px 12px;
+  height: 32px;
+  border: 2px solid #fcfdfe;
+  border-radius: 12px;
+  opacity: 0.5;
+  box-sizing: content-box;
+  position: absolute;
+  bottom: 40px;
+}
+
+.mouse-wheel {
+  display: inline-block;
+  height: 15px;
+  background-color: #fff;
+  width: 2px;
+  animation: scroll 2s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
+  margin-top: 3px;
 }
 
 @keyframes scroll {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(9px);
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(9px);
+    opacity: 0;
+  }
+}
+
+/* section1 PortFolio */
+
+.section1.active {
+  animation: rotate-90-vertical-bck 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes rotate-90-vertical-bck {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(-90deg);
+  }
+}
+.section1-title {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 /* section1-1  1depth*/
 
 .section1-1_inner {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 .one-depth {
-    padding-top: 25px;
-    margin-bottom: 30px;
+  padding-top: 25px;
+  margin-bottom: 30px;
 }
 
 .one-depth > h2 {
-    font-size: 3.5rem;
-    line-height: 5rem;
+  font-size: 3.5rem;
+  line-height: 5rem;
 }
 .one-depth > h2 > strong {
-    color: var(--maincolor);
-    font-weight: 600;
+  color: var(--maincolor);
+  font-weight: 600;
 }
 
 /* 2depth */
@@ -156,220 +186,223 @@ body {
 .education-career_inner .education-contents > p > b,
 .career-contents > strong,
 .career-contents > p > b {
-    font-family: var(--engsubfont);
+  font-family: var(--engsubfont);
 }
 
 .section1-1 .info > strong,
 .education-career_inner .education-contents > strong,
 .career-contents > strong {
-    color: var(--subcolor);
-    font-weight: 600;
-    margin: 20px 0 20px 0;
-    display: inline-block;
+  color: var(--subcolor);
+  font-weight: 600;
+  margin: 20px 0 20px 0;
+  display: inline-block;
 }
 .two-depth {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .p-tie {
-    line-height: 4rem;
-    text-indent: 2rem;
+  line-height: 4rem;
+  text-indent: 2rem;
 }
 
 /* 3depth */
 .three-depth .skill > strong {
-    color: var(--subcolor);
-    font-weight: 600;
-    margin: 20px 0 20px 0;
-    display: inline-block;
+  color: var(--subcolor);
+  font-weight: 600;
+  margin: 20px 0 20px 0;
+  display: inline-block;
 }
 
 .three-depth .skill {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .skill_inner {
-    margin-bottom: 20px;
-    opacity: 0;
-    transition: 0.7s ease-in-out;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: 0.7s ease-in-out;
 }
 .skill_inner.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .skill_inner > li {
-    display: flex;
-    margin-bottom: 25px;
+  display: flex;
+  margin-bottom: 25px;
 }
 
 .skill_inner > li .skill-text-graph-box > span {
-    display: inline-block;
-    margin-bottom: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .skill-text-graph-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-    padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  padding-left: 20px;
 }
 /* skill img size */
 .section1-1 .three-depth .skill .skill_inner > li .skill-img-box > img {
-    width: 100%;
-    max-width: 35px;
+  width: 100%;
+  max-width: 35px;
 }
 
 /* skill 스킬그래프 공통 */
 .progress {
-    border: 1px solid #ffffff;
-    padding: 5px;
-    border-radius: 8px;
+  border: 1px solid #ffffff;
+  padding: 5px;
+  border-radius: 8px;
 }
 .progress-level {
-    height: 10px;
-    background: linear-gradient(to right, var(--maincolor), var(--subcolor));
-    border-radius: 8px;
+  height: 10px;
+  background: linear-gradient(to right, var(--maincolor), var(--subcolor));
+  border-radius: 8px;
 }
 
 /* html */
 .progress-level.html {
-    animation: html 2s ease-in-out both;
+  animation: html 2s ease-in-out both;
 }
 
 @keyframes html {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 88%;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 88%;
+  }
 }
 
 /* css */
 .progress-level.css {
-    animation: css 2s ease-in-out both;
-    animation-delay: 0.3s;
+  animation: css 2s ease-in-out both;
+  animation-delay: 0.3s;
 }
 @keyframes css {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 88%;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 88%;
+  }
 }
 
 /* js_jq */
 .progress-level.js_jq {
-    animation: js_jq 2s ease-in-out both;
-    animation-delay: 0.6s;
+  animation: js_jq 2s ease-in-out both;
+  animation-delay: 0.6s;
 }
 @keyframes js_jq {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 70%;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
 }
 
 /* ps */
 .progress-level.photoshop {
-    animation: photoshop 2s ease-in-out both;
-    animation-delay: 0.9s;
+  animation: photoshop 2s ease-in-out both;
+  animation-delay: 0.9s;
 }
 
 @keyframes photoshop {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 79%;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 79%;
+  }
 }
 
 /* il */
 .progress-level.illustrator {
-    animation: illustrator 2s ease-in-out both;
-    animation-delay: 1.2s;
+  animation: illustrator 2s ease-in-out both;
+  animation-delay: 1.2s;
 }
 @keyframes illustrator {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 79%;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 79%;
+  }
 }
 
 /* figma */
 
 .progress-level.figma {
-    animation: figma 2s ease-in-out both;
-    animation-delay: 1.5s;
+  animation: figma 2s ease-in-out both;
+  animation-delay: 1.5s;
 }
 @keyframes figma {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 77%;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 77%;
+  }
 }
 
 /* 4depth */
 .fourth-depth {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .fourth-depth > strong {
-    color: var(--subcolor);
-    font-weight: 600;
-    margin: 20px 0 20px 0;
-    display: inline-block;
-    font-size: 2.5rem;
+  color: var(--subcolor);
+  font-weight: 600;
+  margin: 20px 0 20px 0;
+  display: inline-block;
+  font-size: 2.5rem;
 }
 .etc_inner {
-    display: flex;
-    width: 30%;
-    justify-content: space-between;
-    padding-bottom: 40px;
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  padding-bottom: 40px;
 }
 
 .etc_inner > li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 2.4rem;
 }
 
 .etc_inner > li:nth-child(2) > img {
-    margin-bottom: 3px;
+  margin-bottom: 3px;
 }
 
 .etc_inner > li:nth-child(3) > img,
 .etc_inner > li:nth-child(4) > img {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 /* profile img */
 .profile-img-box .profile-img {
-    width: 100%;
-    max-width: 500px;
-    position: absolute;
-    bottom: 0;
-    right: 100px;
-    transition: 0.7s ease-in-out;
-    opacity: 0;
+  width: 100%;
+  max-width: 500px;
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+  transition: 0.7s ease-in-out;
+  opacity: 0;
 }
 .profile-img.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* etc img size */
 .section1-1 .fourth-depth .etc_inner > li > img {
-    width: 100%;
-    max-width: 50px;
+  width: 100%;
+  max-width: 50px;
 }
+
+/* section2 */

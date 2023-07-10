@@ -1,0 +1,64 @@
+.cube__box {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  width: 100vw;
+  height: 100%;
+}
+.cube__box .scene {
+  width: 100%;
+  height: 100%;
+  perspective: 150vh;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  font-size: 2.5em;
+  /* transform: rotateX(-20deg); */
+  scale: 1; /* 작업 후 삭제 */
+}
+.cube__face {
+  transform-style: preserve-3d;
+  perspective-origin: left bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.cube__face--front {
+  width: 100vw;
+  transform: rotateY(0deg) translateZ(0vw);
+}
+.cube__face--right {
+  width: 100vw;
+  transform: rotateY(90deg) translateX(50vw) translateZ(50vw);
+}
+
+.cube__face--back {
+  width: 100vw;
+  transform: rotateY(180deg) translateZ(100vw);
+}
+.cube__face--left {
+  width: 100vw;
+  transform: rotateY(-90deg) translateX(-50vw) translateZ(50vw);
+}
+
+.cube__face--front.fwd-right-side {
+  transform: rotateY(0deg) translateZ(50vw);
+}
+.cube__face--back.fwd-right-side {
+  transform: rotateY(180deg) translateZ(50vw);
+}
+.cube__face--right.fwd-right-side {
+  transform: rotateY(90deg) translateX(0vw) translateZ(50vw);
+}
+.cube__face--left.fwd-right-side {
+  transform: rotateY(-90deg) translateX(0vw) translateZ(50vw);
+}
