@@ -33,20 +33,20 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 .cube__face--front {
-  width: 100vw;
+  width: 100%;
   transform: rotateY(0deg) translateZ(0vw);
 }
 .cube__face--right {
-  width: 100vw;
+  width: 100%;
   transform: rotateY(90deg) translateX(50vw) translateZ(50vw);
 }
 
 .cube__face--back {
-  width: 100vw;
+  width: 100%;
   transform: rotateY(180deg) translateZ(100vw);
 }
 .cube__face--left {
-  width: 100vw;
+  width: 100%;
   transform: rotateY(-90deg) translateX(-50vw) translateZ(50vw);
 }
 
