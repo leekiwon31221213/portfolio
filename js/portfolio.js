@@ -138,12 +138,25 @@ $(document).ready(function () {
 });
 
 /*Publishing background-img  */
-const jimssa_bgPosition = document.querySelector(".jimssa-page-img");
 
-jimssa_bgPosition.addEventListener("mouseenter", function () {
-  this.style.backgroundPosition = "0 100%";
-});
+function responsive_bgPosition() {
+  let jimssa_bgPosition = document.querySelector(".jimssa-page-img");
+  let bn_survery_bgPosition = document.querySelector(".bn-page-img");
 
-jimssa_bgPosition.addEventListener("mouseleave", function () {
-  this.style.backgroundPosition = "0 0";
-});
+  jimssa_bgPosition.addEventListener("mouseenter", function () {
+    this.style.backgroundPosition = "0 100%";
+  });
+
+  jimssa_bgPosition.addEventListener("mouseleave", function () {
+    this.style.backgroundPosition = "0 0";
+  });
+
+  bn_survery_bgPosition.addEventListener("mouseenter", function () {
+    this.style.backgroundPosition = "0 100%";
+  });
+
+  bn_survery_bgPosition.addEventListener("mouseleave", function () {
+    this.style.backgroundPosition = "0 0";
+  });
+}
+responsive_bgPosition();
