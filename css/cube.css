@@ -20,7 +20,7 @@
   transform-style: preserve-3d;
   font-size: 2.5em;
   /* transform: rotateX(-20deg); */
-  scale: 0.5; /* 작업 후 삭제 */
+  scale: 1; /* 작업 후 삭제 */
 }
 .cube__face {
   transform-style: preserve-3d;

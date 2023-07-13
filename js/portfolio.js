@@ -38,91 +38,142 @@ window.addEventListener("scroll", function () {
   }
 });
 
-let sec2_1_slide_img = document.querySelector(".section2-1-slide-list");
-let sec2_1_slide_li = document.querySelectorAll(".section2-1-slide-list > li");
-let sec2_1_pre_btn = document.querySelector(".section2-1-pre-btn");
-let sec2_1_next_btn = document.querySelector(".section2-1-next-btn");
-let sec2_1_slide_img_width = sec2_1_slide_img.clientWidth;
-let sec2_1_slide_img_number = sec2_1_slide_li.length;
-let sec_2_1_old_img = 0;
-let sec_2_1_new_img = 0;
+$(document).ready(function () {
+  /* section2-1-1 slide */
+  let sec2_1_slide_img = $(".section2-1-slide-list");
+  let sec2_1_slide_li = $(".section2-1-slide-list > li");
+  let sec2_1_pre_btn = $(".section2-1-pre-btn");
+  let sec2_1_next_btn = $(".section2-1-next-btn");
+  let sec2_1_slide_img_width = sec2_1_slide_img.width();
+  let sec2_1_slide_img_number = sec2_1_slide_li.length;
+  let sec_2_1_old_img = 0;
+  let sec_2_1_new_img = 0;
 
-sec2_1_next_btn.addEventListener("click", function () {
-  sec_2_1_new_img++;
-  if (sec_2_1_new_img >= sec2_1_slide_img_number - 1) {
-    sec_2_1_new_img = 0;
+  function slideImg(sec_2_1_new_img) {
+    targetX = -(sec_2_1_new_img * sec2_1_slide_img_width); //움직이는 거리(너비)
+
+    sec2_1_slide_img.animate({ left: targetX }, 900); //위에서 계산한 거리만큼 움직임
+
+    sec_2_1_old_img = sec_2_1_new_img;
   }
-});
+  /* 다음버튼 */
+  sec2_1_next_btn.click(function () {
+    sec_2_1_new_img++;
+    if (sec_2_1_new_img >= sec2_1_slide_img_number - 1) {
+      sec_2_1_new_img = 0;
+    }
+    slideImg(sec_2_1_new_img);
+  });
+  /* 이전버튼 */
+  sec2_1_pre_btn.click(function () {
+    sec_2_1_new_img--;
+    if (sec_2_1_new_img < 0) {
+      sec_2_1_new_img = sec2_1_slide_img_number - 1;
+    }
+    slideImg(sec_2_1_new_img);
+  });
 
-/* section3-1 design modal */
-$(".design_wrap li").click(function () {
-  //클래스 tabContentWarp li를 클릭했을때
-  de_modal(this); //de_modal은(this)를 받아 .tabContentWarp li가 됨
-});
+  // const slide_2_1_1_width = document.querySelector(".section2-1-slide-list").clientWidth;
+  // $(".section2-1-slide-list").css("left", -slide_2_1_1_width);
+  // $(".section2-1-slide-list").last().prependTo($(".section2-1-slide-list"));
+  // $(".btn").on("click", function () {
+  //   if ($(this).hasClass(".section2-1-pre-btn")) {
+  //     $(".section2-1-slide-list")
+  //       .stop()
+  //       .animate({ left: "+=" + slide_2_1_1_width }, "slow", function () {
+  //         $(".section2-1-slide-list").css("left", -slide_2_1_1_width);
+  //         $(".section2-1-slide-list").last().prependTo($(".section2-1-slide-list"));
+  //       });
+  //   } else if ($(this).hasClass(".section2-1-next-btn")) {
+  //     $(".section2-1-slide-list")
+  //       .stop()
+  //       .animate({ left: "-=" + slide_2_1_1_width }, "slow", function () {
+  //         $(".section2-1-slide-list").css("left", -slide_2_1_1_width);
+  //         $(".section2-1-slide-list").first().appendTo($(".section2-1-slide-list"));
+  //       });
+  //   }
 
-/* Design Modal */
-function de_modal(target) {
-  //de_modal은 target으로 칭한다.
+  /* section3-1 design modal */
+  $(".design_wrap li").click(function () {
+    //클래스 tabContentWarp li를 클릭했을때
+    de_modal(this); //de_modal은(this)를 받아 .tabContentWarp li가 됨
+  });
 
-  let modal = $(".design-modal"); // #modal은 let이라는 이름이 modal이란 변수에 저장한다.
-  let modal_img = modal.find(".modal_wd_inner li p");
-  // 변수modal에서 .modal_wd_inner li p를 찾아 변수 modal_img에 저장한다.
+  /* Design Modal */
+  function de_modal(target) {
+    //de_modal은 target으로 칭한다.
 
-  target = $(target); //target에 de_modal(target)을 저장한다.
-  target.siblings().removeClass("selected");
-  target.addClass("selected");
-  console.log(target.attr("data-img"));
+    let modal = $(".design-modal"); // #modal은 let이라는 이름이 modal이란 변수에 저장한다.
+    let modal_img = modal.find(".modal_wd_inner li p");
+    // 변수modal에서 .modal_wd_inner li p를 찾아 변수 modal_img에 저장한다.
 
-  let li_count = target.parent().children("li").length;
-  // 변수 li_count는 부모 타겟에 자식li개수를 저장한다
+    target = $(target); //target에 de_modal(target)을 저장한다.
+    target.siblings().removeClass("selected");
+    target.addClass("selected");
+    console.log(target.attr("data-img"));
 
-  console.log(li_count);
-  let index = target.attr("data-index");
-  // 변수 index는 타겟의 data-index요소의 속성을 저장한다
+    let li_count = target.parent().children("li").length;
+    // 변수 li_count는 부모 타겟에 자식li개수를 저장한다
 
-  modal_img.html("<img src='./img/viewpage/" + target.attr("data-img") + "_view.png' alt='.'>");
+    console.log(li_count);
+    let index = target.attr("data-index");
+    // 변수 index는 타겟의 data-index요소의 속성을 저장한다
 
-  /* 변수 modal_img(.modal_wd_inner li p)에 html("")을 출력한다.
+    modal_img.html("<img src='./img/viewpage/" + target.attr("data-img") + "_view.png' alt='.'>");
+
+    /* 변수 modal_img(.modal_wd_inner li p)에 html("")을 출력한다.
   이미지 방에 뷰페이지 방에있는 이미지를 불러오며 de_modal(target)==.design_wrap li에
   data-img 속성을 값을 설정한다 + _view.png _뷰.png확장자며 알트값은.으로 설정한다  */
 
-  modal.find(".design-modal_btn .page_num .pres").text(index);
-  //변수 modal(#modal)에서 ("design-modal_btn .page_num.pres")찾아 데이터 인덱스 속성을 부여한다
+    modal.find(".design-modal_btn .page_num .pres").text(index);
+    //변수 modal(#modal)에서 ("design-modal_btn .page_num.pres")찾아 데이터 인덱스 속성을 부여한다
 
-  modal.find(".design-modal_btn .page_num .total").text(li_count);
-  //변수 modal(#modal)에서 ("design-modal_btn .page_num .total")찾아 자식에li개수를 저장한다
-  modal.stop(true, true).fadeIn();
-  document.body.style.overflow = "hidden";
-  //console.log(index);
-}
+    modal.find(".design-modal_btn .page_num .total").text(li_count);
+    //변수 modal(#modal)에서 ("design-modal_btn .page_num .total")찾아 자식에li개수를 저장한다
+    modal.stop(true, true).fadeIn();
+    document.body.style.overflow = "hidden";
+    //console.log(index);
+  }
 
-/* 다음보기 */
-$(".design-modal .right_btn").click(function () {
-  let next_index = parseInt($(".design-modal .page_num .pres").text()) + 1;
-  let li_count = parseInt($(".design-modal .page_num .total").text());
-  next_index = next_index > li_count ? 1 : next_index;
-  de_modal(
-    $(".design_wrap li.selected")
-      .parent()
-      .children("li[data-index='" + next_index + "']")[0]
-  );
+  /* 다음보기 */
+  $(".design-modal .right_btn").click(function () {
+    let next_index = parseInt($(".design-modal .page_num .pres").text()) + 1;
+    let li_count = parseInt($(".design-modal .page_num .total").text());
+    next_index = next_index > li_count ? 1 : next_index;
+    de_modal(
+      $(".design_wrap li.selected")
+        .parent()
+        .children("li[data-index='" + next_index + "']")[0]
+    );
+  });
+
+  /* 이전보기 ;*/
+  $(".design-modal .left_btn").click(function () {
+    let prev_index = parseInt($(".design-modal .page_num .pres").text()) - 1;
+    let li_count = parseInt($(".design-modal .page_num .total").text());
+    prev_index = prev_index == 0 ? li_count : prev_index;
+    de_modal(
+      $(".design_wrap li.selected")
+        .parent()
+        .children("li[data-index='" + prev_index + "']")
+    );
+  });
+
+  /* 닫기 버튼 */
+  $(".design-modal .close_btn").click(function () {
+    $(".design-modal").stop(true, true).fadeOut();
+    $(".design_wrap .selected").removeClass("selected");
+    document.body.style.overflow = "unset";
+  });
 });
 
-/* 이전보기 ;*/
-$(".design-modal .left_btn").click(function () {
-  let prev_index = parseInt($(".design-modal .page_num .pres").text()) - 1;
-  let li_count = parseInt($(".design-modal .page_num .total").text());
-  prev_index = prev_index == 0 ? li_count : prev_index;
-  de_modal(
-    $(".design_wrap li.selected")
-      .parent()
-      .children("li[data-index='" + prev_index + "']")
-  );
+/*Publishing background-img  */
+const jimssa_bgPosition = document.querySelector(".jimssa-page-img");
+
+jimssa_bgPosition.addEventListener("mouseenter", function () {
+  this.style.backgroundPosition = "0 100%";
 });
 
-/* 닫기 버튼 */
-$(".design-modal .close_btn").click(function () {
-  $(".design-modal").stop(true, true).fadeOut();
-  $(".design_wrap .selected").removeClass("selected");
-  document.body.style.overflow = "unset";
+jimssa_bgPosition.addEventListener("mouseleave", function () {
+  this.style.backgroundPosition = "0 0";
 });
