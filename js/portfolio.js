@@ -61,6 +61,22 @@ $(document).ready(function () {
           $(".section2-1-slide-list > li").first().appendTo($(".section2-1-slide-list"));
         });
     }
+
+    /* responsive tablet mobile btn */
+    $(".publishing_content_btn .re_btn_scssMo").click(function () {
+      $(this).next().fadeIn();
+      document.body.style.overflow = "hidden";
+    });
+
+    $(".publishing_content_btn .re_btn_scssTb").click(function () {
+      $(this).next().fadeIn();
+      document.body.style.overflow = "hidden";
+    });
+
+    $(".close").click(function () {
+      $(".tb_pop ,.mo_pop , .pu_modal, .pu_modal2, .pu_modal3").stop(true, true).fadeOut();
+      document.body.style.overflow = "unset";
+    });
   });
 
   /* section3-1 design modal */
@@ -142,6 +158,7 @@ $(document).ready(function () {
 function responsive_bgPosition() {
   let jimssa_bgPosition = document.querySelector(".jimssa-page-img");
   let bn_survery_bgPosition = document.querySelector(".bn-page-img");
+  let webtrend_bgPosition = document.querySelector(".webtrend-page-img");
 
   jimssa_bgPosition.addEventListener("mouseenter", function () {
     this.style.backgroundPosition = "0 100%";
@@ -156,6 +173,13 @@ function responsive_bgPosition() {
   });
 
   bn_survery_bgPosition.addEventListener("mouseleave", function () {
+    this.style.backgroundPosition = "0 0";
+  });
+  webtrend_bgPosition.addEventListener("mouseenter", function () {
+    this.style.backgroundPosition = "0 100%";
+  });
+
+  webtrend_bgPosition.addEventListener("mouseleave", function () {
     this.style.backgroundPosition = "0 0";
   });
 }

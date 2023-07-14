@@ -1,0 +1,111 @@
+@import url(common.css);
+
+.mo_responsive .mobile {
+  background-color: #602f6b;
+  width: 458px;
+  height: 700px;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+}
+.mo_responsive .mobile::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 96.5%;
+  height: 670px;
+  border-radius: 18px;
+}
+.mo_responsive .mobile .camera {
+  position: absolute;
+  top: 6.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  height: 40px;
+  background-color: #333;
+  border-radius: 35px;
+  z-index: 1;
+}
+.mo_responsive .mobile .camera span {
+  position: absolute;
+}
+.mo_responsive .mobile .camera span:nth-child(1) {
+  width: 10%;
+  height: 17px;
+  top: 50%;
+  left: 81%;
+  transform: translate(-50%, -50%);
+  background-color: #555;
+  border-radius: 50%;
+}
+.mo_responsive .mobile .camera span:nth-child(2) {
+  width: 4.5%;
+  height: 6px;
+  top: 50%;
+  left: 81.1%;
+  transform: translate(-50%, -50%);
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.mo_responsive .mobile .top_content span:nth-child(1) {
+  font-family: "Pretendard-Regular";
+  font-size: 1em;
+  position: absolute;
+  top: 6.5%;
+  left: 17%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-weight: 600;
+  z-index: 2;
+}
+.mo_responsive .mobile .top_content span:nth-child(2) img {
+  position: absolute;
+  top: 4.3%;
+  right: 8%;
+  width: 19%;
+  z-index: 2;
+}
+.mo_responsive .power {
+  position: absolute;
+  right: 0;
+  top: 87px;
+}
+.mo_responsive .power span {
+  position: absolute;
+  width: 6px;
+  height: 75px;
+  border-radius: 0 5px 5px 0;
+}
+.mo_responsive .volume {
+  position: absolute;
+  width: 7px;
+  height: 150px;
+  top: 87px;
+  right: 99.7%;
+}
+.mo_responsive .volume span {
+  position: absolute;
+  width: 6px;
+  height: 55px;
+  border-radius: 5px 0 0 5px;
+}
+.mo_responsive .volume span:nth-child(1) {
+  top: 0;
+  height: 25px;
+}
+.mo_responsive .volume span:nth-child(2) {
+  bottom: 43px;
+}
+.mo_responsive .volume span:nth-child(3) {
+  bottom: -30px;
+}
+.mo_responsive .volume span,
+.mo_responsive .power span {
+  background-color: #602f6b;
+  box-shadow: 0 0 4px #ccc;
+}
