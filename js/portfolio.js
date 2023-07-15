@@ -2,12 +2,18 @@ let skill_graph = document.querySelector(".skill_inner");
 let profile_img = document.querySelector(".profile-img");
 let two_d_grapic = document.querySelector(".design-2d_container");
 let ui_ux = document.querySelector(".design-uiux_container");
+let sec2_3_phone = document.querySelector(".section2-3-slide-list");
 
 window.addEventListener("scroll", function () {
   let sec1_Height = document.querySelector(".section1-title").clientHeight;
   let one_depth_Height = document.querySelector(".one-depth").clientHeight;
   let sec3_Height = document.querySelector(".section3-main").clientHeight;
   let sec3_1_height = document.querySelector(".design-2d_container").clientHeight;
+
+  let sec2_main_Height = document.querySelector(".section2-main").clientHeight;
+
+  let sec2_1_Height = document.querySelector(".section2-1").clientHeight;
+  let sec2_2_Height = document.querySelector(".section2-2").clientHeight;
 
   if (window.scrollY >= sec1_Height + one_depth_Height / 2) {
     skill_graph.style.display = "block";
@@ -35,6 +41,12 @@ window.addEventListener("scroll", function () {
   } else {
     ui_ux.style.display = "none";
     ui_ux.classList.remove("active");
+  }
+
+  if (this.window.scrollY >= sec2_main_Height + sec2_1_Height + sec2_2_Height / 2) {
+    sec2_3_phone.style.display = "flex";
+  } else {
+    sec2_3_phone.style.display = "none";
   }
 });
 
