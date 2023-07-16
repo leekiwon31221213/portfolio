@@ -43,7 +43,7 @@ window.addEventListener("scroll", function () {
     ui_ux.classList.remove("active");
   }
 
-  if (this.window.scrollY >= sec2_main_Height + sec2_1_Height + sec2_2_Height / 2) {
+  if (window.scrollY >= sec2_main_Height + sec2_1_Height + sec2_2_Height / 2) {
     sec2_3_phone.style.display = "flex";
   } else {
     sec2_3_phone.style.display = "none";
@@ -172,3 +172,59 @@ function responsive_bgPosition() {
   });
 }
 responsive_bgPosition();
+
+/* Main cube slide */
+const cube = document.querySelector(".cube");
+const pfPage = document.querySelectorAll(".cube__face");
+const rotateLeft = document.querySelector(".left-btn");
+const rotateRight = document.querySelector(".right-btn");
+let cube_face_back = document.querySelector(".cube__face--back");
+
+let cubeFace = "front";
+rotateLeft.addEventListener("click", () => {
+  if (cubeFace === "front") {
+    cube.classList.remove("activeLeft-4");
+    cube.classList.add("activeLeft-1");
+    cubeFace = "left";
+  } else if (cubeFace === "left") {
+    cube.classList.remove("activeLeft-1");
+    cube.classList.add("activeLeft-2");
+    cubeFace = "back";
+    cube.style.height = "100vh";
+  } else if (cubeFace === "back") {
+    cube.classList.remove("activeLeft-2");
+    cube.classList.add("activeLeft-3");
+    cubeFace = "right";
+    cube.style.height = "400vh";
+  } else if (cubeFace === "right") {
+    cube.classList.remove("activeLeft-3");
+    cube.classList.add("activeLeft-4");
+    cubeFace = "front";
+    cube.style.height = "300vh";
+  }
+});
+rotateRight.addEventListener("click", () => {
+  cube.classList.add("active");
+  if (cubeFace === "front") {
+    cube.classList.remove("activeRight-4");
+    cube.classList.add("activeRight-1");
+    cubeFace = "right";
+    cube.style.height = "400vh";
+  } else if (cubeFace === "right") {
+    cube.classList.remove("activeRight-1");
+    cube.classList.add("activeRight-2");
+    cubeFace = "left";
+    cube.style.height = "300vh";
+    cube_face_back.style.zIndex = "1";
+  } else if (cubeFace === "left") {
+    cube.classList.remove("activeRight-2");
+    cube.classList.add("activeRight-3");
+    cubeFace = "back";
+    cube.style.height = "100vh";
+  } else if (cubeFace === "back") {
+    cube.classList.remove("activeRight-3");
+    cube.classList.add("activeRight-4");
+    cubeFace = "front";
+    cube.style.height = "300vh";
+  }
+});

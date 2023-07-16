@@ -16,20 +16,24 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
-    <div class="wrap">
+    <div class="cube_direction">
+      <button class="left-btn cube_rotate_btn">
+        <span class="material-symbols-outlined"> arrow_back_ios </span>
+      </button>
+      <button class="right-btn cube_rotate_btn">
+        <span class="material-symbols-outlined"> arrow_forward_ios </span>
+      </button>
+    </div>
+    <div class="cube_box">
       <div class="scene">
         <div class="cube">
           <!-- section1 -->
           <!-- cube__face cube__face--front active 스크립트 해결되면 아래 div cube__face cube__face--front active 넣을것 -->
-          <div class="cube__face cube__face--right">
+          <div class="cube__face cube__face--front">
             <section class="section1">
               <div class="section1-title">
                 <article>
                   <h2>ProFile</h2>
-                  <button class="section1-next-btn">
-                    <span class="material-symbols-outlined"> arrow_forward_ios </span>
-                  </button>
-
                   <div class="mouse-icon">
                     <span class="mouse-wheel"></span>
                   </div>
@@ -202,14 +206,7 @@
           <div class="cube__face cube__face--back">
             <section class="section3">
               <div class="section3-main">
-                <button class="section3-pre-btn">
-                  <span class="material-symbols-outlined"> arrow_back_ios </span>
-                </button>
                 <h2 class="section3-title">Design</h2>
-                <button class="section3-next-btn">
-                  <span class="material-symbols-outlined"> arrow_forward_ios </span>
-                </button>
-
                 <div class="mouse-icon">
                   <span class="mouse-wheel"></span>
                 </div>
@@ -371,16 +368,10 @@
 
           <!-- section2 -->
           <!-- cube__face cube__face--right -->
-          <div class="cube__face cube__face--front active">
+          <div class="cube__face cube__face--right">
             <section class="section2">
               <div class="section2-main">
-                <button class="section2-pre-btn">
-                  <span class="material-symbols-outlined"> arrow_back_ios </span>
-                </button>
                 <h2 class="section2-title">Publishing</h2>
-                <button class="section2-next-btn">
-                  <span class="material-symbols-outlined"> arrow_forward_ios </span>
-                </button>
 
                 <div class="mouse-icon">
                   <span class="mouse-wheel"></span>
@@ -1571,6 +1562,9 @@
                 </div>
               </div>
             </section>
+          </div>
+          <div class="cube__face cube__face--left">
+            <section class="section4"></section>
           </div>
         </div>
       </div>

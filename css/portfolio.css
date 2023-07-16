@@ -11,6 +11,7 @@ body {
   font-family: "Pretendard-Regular";
 }
 :root {
+  --mainbgcolor: rgba(0, 0, 0, 0.5);
   --mainbgcolor: #212125;
   --subbgcolor: #dfdfe1f2;
   --maincolor: #a3de83;
@@ -23,15 +24,15 @@ body {
 h6 {
   display: none;
 }
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 0;
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
@@ -54,6 +55,23 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
+/* main btn */
+.left-btn,
+.right-btn {
+  color: inherit;
+}
+.left-btn > span,
+.right-btn > span {
+  display: inline-block;
+  font-size: 2rem;
+}
+
+.left-btn > span {
+  margin-left: 20px;
+}
+.right-btn > span {
+  margin-right: 20px;
+}
 /* section1-1  1depth*/
 
 .section1-1_inner {
@@ -248,6 +266,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 40vh;
 }
 
 .fourth-depth > strong {
@@ -385,7 +404,7 @@ body::-webkit-scrollbar-thumb {
 .jimsa-pc {
   max-width: 638px;
   height: 351px;
-  top: 32px;
+  top: 66px;
   left: 512px;
 }
 .bn-img {
@@ -469,16 +488,16 @@ body::-webkit-scrollbar-thumb {
 }
 
 .jimssa-page-img {
-  background-image: url(/img/project/jimssa_project.png);
+  background-image: url(../img/project/jimssa_project.png);
   transition: background-position 15s;
 }
 .bn-page-img {
-  background-image: url(/img/project/bn_survey_project.png);
+  background-image: url(../img/project/bn_survey_project.png);
   transition: background-position 8s;
 }
 
 .webtrend-page-img {
-  background-image: url(/img/project/web_trend.png);
+  background-image: url(../img/project/web_trend.png);
   transition: background-position 3s;
 }
 .jimssa-page-img,
@@ -610,7 +629,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   position: absolute;
   max-width: 716px;
-  top: 31px;
+  top: 65px;
   left: 27.6%;
   height: 377px;
 }
@@ -698,7 +717,7 @@ body::-webkit-scrollbar-thumb {
 }
 .sec2-3-namyang {
   right: 7.5%;
-  top: 96px;
+  top: 128px;
   width: 100%;
   max-width: 592px;
   height: 337px;
@@ -710,6 +729,8 @@ body::-webkit-scrollbar-thumb {
 /* section3 ~ 3-1 */
 .section3 {
   height: 100vh;
+  /* border: 5px solid red; */
+
   background-color: var(--mainbgcolor);
   width: 100%;
   position: relative;
@@ -719,6 +740,7 @@ body::-webkit-scrollbar-thumb {
 .section3-1 {
   height: 100vh;
   position: relative;
+  /* border: 5px solid red; */
   background-color: var(--mainbgcolor);
 }
 
@@ -729,6 +751,7 @@ body::-webkit-scrollbar-thumb {
   text-align: right;
 }
 .design_wrap {
+  /* border: 5px solid red; */
   background-color: var(--mainbgcolor);
 }
 .design-content_inner {
@@ -769,7 +792,7 @@ body::-webkit-scrollbar-thumb {
 .design-ui-ux {
   width: 90%;
   margin: 0 auto;
-  height: 90vh;
+  height: 100vh;
   position: relative;
 }
 .design-2d_container {
@@ -957,13 +980,27 @@ body::-webkit-scrollbar-thumb {
 .section1,
 .section1-1,
 .section2,
-.section2-1 {
+.section2-1,
+.section4 {
+  /* border: 5px solid red; */
   background-color: var(--mainbgcolor);
   width: 100%;
   height: 100%;
   position: relative;
   color: #fff;
 }
+
+/* .section2::-webkit-scrollbar {
+  width: 0;
+}
+
+.section2::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.section2::-webkit-scrollbar-thumb {
+  background-color: transparent;
+} */
 
 .section1-title > article > h2,
 .section2-title,
@@ -1074,12 +1111,12 @@ body::-webkit-scrollbar-thumb {
 .section2-1,
 .section2-3 {
   background-color: var(--subbgcolor);
-  height: 100%;
+  /* height: 100%; */
 }
 
 .section2-2 {
   background-color: #fff;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .section2-1_inner,
