@@ -322,12 +322,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .section2-1-slide-list,
-.section2-2-slide-list {
+.section2-2-slide-list,
+.section2-3-slide-list {
   width: calc(var(--sec2-slide-width) * var(--sec2-slide-count));
-}
-.section2-2-slide-list {
-  width: 100%;
-  justify-content: space-around;
 }
 
 .section2-1-slide-list,
@@ -359,7 +356,9 @@ body::-webkit-scrollbar-thumb {
   z-index: 10;
 }
 
-.section2-1-slide-list > li {
+.section2-1-slide-list > li,
+.section2-2-slide-list > li,
+.section2-3-slide-list > li {
   width: calc(100% / var(--sec2-slide-count));
   height: 80vh;
   display: flex;
@@ -372,7 +371,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .responsive-main-img-box .all-device {
-  width: 80%;
+  width: 74%;
   z-index: 1;
 }
 
@@ -384,28 +383,28 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
 }
 .jimsa-pc {
-  max-width: 698px;
-  height: 382px;
-  top: 38px;
-  left: 30%;
+  max-width: 638px;
+  height: 351px;
+  top: 32px;
+  left: 512px;
 }
 .bn-img {
-  max-width: 449px;
+  max-width: 407px;
   height: 286px;
-  left: 15%;
+  left: 280px;
   top: 50%;
 }
 .web-trend {
-  max-width: 248px;
-  height: 350px;
-  right: 18.7%;
+  max-width: 223px;
+  height: 320px;
+  right: 327px;
   top: 43%;
 }
 .jimsa-mo {
-  max-width: 125px;
-  height: 266px;
+  max-width: 111px;
+  height: 240px;
   top: 60.4%;
-  right: 11.5%;
+  right: 233px;
 }
 
 .tool_tie > img {
@@ -605,21 +604,40 @@ body::-webkit-scrollbar-thumb {
 
 /* section2-2 */
 .computer1 {
-  width: 100%;
+  width: 47%;
 }
 .cgv-img {
   width: 100%;
   position: absolute;
-  max-width: 770px;
-  top: 19px;
-  height: 410px;
+  max-width: 716px;
+  top: 31px;
+  left: 27.6%;
+  height: 377px;
 }
 
-.onepage-main-img-box {
-  width: 50%;
+/* section2-2-1 */
+.section2-2-1,
+.section2-2-2,
+.section2-2-3 {
+  justify-content: center;
+}
+.section2-2-1_contents,
+.section2-2-2_contents,
+.section2-2-3_contents {
+  width: 100%;
 }
 
 /* section2-3 */
+.section2-3-1,
+.section2-3-2,
+.section2-3-3 {
+  justify-content: center;
+}
+.section2-3-1_contents,
+.section2-3-2_contents,
+.section2-3-3_contents {
+  width: 100%;
+}
 
 .phone1,
 .phone2,
@@ -679,11 +697,11 @@ body::-webkit-scrollbar-thumb {
   width: 40%;
 }
 .sec2-3-namyang {
-  right: 7.2%;
-  top: 22px;
+  right: 7.5%;
+  top: 96px;
   width: 100%;
-  max-width: 580px;
-  height: 327px;
+  max-width: 592px;
+  height: 337px;
   position: absolute;
 }
 
@@ -1081,6 +1099,7 @@ body::-webkit-scrollbar-thumb {
   color: #333;
   font-weight: var(--engsubfont);
   font-size: 2.2rem;
+  margin-bottom: 3rem;
 }
 
 .section2-1-contents,
