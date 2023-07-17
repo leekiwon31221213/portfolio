@@ -148,6 +148,10 @@ function responsive_bgPosition() {
   let bn_survery_bgPosition = document.querySelector(".bn-page-img");
   let webtrend_bgPosition = document.querySelector(".webtrend-page-img");
 
+  let cgv_bgPosition = document.querySelector(".cgv-page-img");
+  let desert39_bgPosition = document.querySelector(".desert39-page-img");
+  let krispy_kreme_bgPosition = document.querySelector(".krispy-kreme-donut-page-img");
+
   jimssa_bgPosition.addEventListener("mouseenter", function () {
     this.style.backgroundPosition = "0 100%";
   });
@@ -170,6 +174,30 @@ function responsive_bgPosition() {
   webtrend_bgPosition.addEventListener("mouseleave", function () {
     this.style.backgroundPosition = "0 0";
   });
+
+  cgv_bgPosition.addEventListener("mouseenter", function () {
+    this.style.backgroundPosition = "0 100%";
+  });
+
+  cgv_bgPosition.addEventListener("mouseleave", function () {
+    this.style.backgroundPosition = "0 0";
+  });
+
+  desert39_bgPosition.addEventListener("mouseenter", function () {
+    this.style.backgroundPosition = "0 100%";
+  });
+
+  desert39_bgPosition.addEventListener("mouseleave", function () {
+    this.style.backgroundPosition = "0 0";
+  });
+
+  krispy_kreme_bgPosition.addEventListener("mouseenter", function () {
+    this.style.backgroundPosition = "0 100%";
+  });
+
+  krispy_kreme_bgPosition.addEventListener("mouseleave", function () {
+    this.style.backgroundPosition = "0 0";
+  });
 }
 responsive_bgPosition();
 
@@ -181,50 +209,69 @@ const rotateRight = document.querySelector(".right-btn");
 let cube_face_back = document.querySelector(".cube__face--back");
 
 let cubeFace = "front";
+
+/* pre-btn */
 rotateLeft.addEventListener("click", () => {
   if (cubeFace === "front") {
-    cube.classList.remove("activeLeft-4");
-    cube.classList.add("activeLeft-1");
     cubeFace = "left";
-  } else if (cubeFace === "left") {
-    cube.classList.remove("activeLeft-1");
-    cube.classList.add("activeLeft-2");
-    cubeFace = "back";
+    cube.classList.remove("activeRight__left-front");
+    cube.classList.remove("activeLeft__right-front");
+    cube.classList.add("activeLeft__front-left");
     cube.style.height = "100vh";
-  } else if (cubeFace === "back") {
-    cube.classList.remove("activeLeft-2");
-    cube.classList.add("activeLeft-3");
-    cubeFace = "right";
-    cube.style.height = "400vh";
-  } else if (cubeFace === "right") {
-    cube.classList.remove("activeLeft-3");
-    cube.classList.add("activeLeft-4");
-    cubeFace = "front";
+    cube_face_back.style.zIndex = "-1";
+  } else if (cubeFace === "left") {
+    cubeFace = "back";
+    cube.classList.remove("activeRight__back-left");
+    cube.classList.remove("activeLeft__front-left");
+    cube.classList.add("activeLeft__left-back");
     cube.style.height = "300vh";
+    cube_face_back.style.zIndex = "1";
+  } else if (cubeFace === "back") {
+    cubeFace = "right";
+    cube.classList.remove("activeRight__right-back");
+    cube.classList.remove("activeLeft__left-back");
+    cube.classList.add("activeLeft__back-right");
+    cube.style.height = "400vh";
+    cube_face_back.style.zIndex = "-1";
+  } else if (cubeFace === "right") {
+    cubeFace = "front";
+    cube.classList.remove("activeRight__front-right");
+    cube.classList.remove("activeLeft__back-right");
+    cube.classList.add("activeLeft__right-front");
+    cube.style.height = "300vh";
+    cube_face_back.style.zIndex = "-1";
   }
 });
+/* next-btn */
 rotateRight.addEventListener("click", () => {
   cube.classList.add("active");
   if (cubeFace === "front") {
-    cube.classList.remove("activeRight-4");
-    cube.classList.add("activeRight-1");
     cubeFace = "right";
+    cube.classList.remove("activeLeft__right-front");
+    cube.classList.remove("activeRight__left-front");
+    cube.classList.add("activeRight__front-right");
     cube.style.height = "400vh";
+    cube_face_back.style.zIndex = "-1";
   } else if (cubeFace === "right") {
-    cube.classList.remove("activeRight-1");
-    cube.classList.add("activeRight-2");
-    cubeFace = "left";
+    cubeFace = "back";
+    cube.classList.remove("activeRight__front-right");
+    cube.classList.remove("activeLeft__back-right");
+    cube.classList.add("activeRight__right-back");
     cube.style.height = "300vh";
     cube_face_back.style.zIndex = "1";
-  } else if (cubeFace === "left") {
-    cube.classList.remove("activeRight-2");
-    cube.classList.add("activeRight-3");
-    cubeFace = "back";
-    cube.style.height = "100vh";
   } else if (cubeFace === "back") {
-    cube.classList.remove("activeRight-3");
-    cube.classList.add("activeRight-4");
+    cubeFace = "left";
+    cube.classList.remove("activeRight__right-back");
+    cube.classList.remove("activeLeft__left-back");
+    cube.classList.add("activeRight__back-left");
+    cube.style.height = "100vh";
+    cube_face_back.style.zIndex = "-1";
+  } else if (cubeFace === "left") {
     cubeFace = "front";
+    cube.classList.remove("activeRight__back-left");
+    cube.classList.remove("activeLeft__front-left");
+    cube.classList.add("activeRight__left-front");
     cube.style.height = "300vh";
+    cube_face_back.style.zIndex = "-1";
   }
 });
