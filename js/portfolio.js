@@ -52,22 +52,69 @@ window.addEventListener("scroll", function () {
 
 $(document).ready(function () {
   /* responsive tablet mobile btn */
-  $(".publishing_content_btn .re_btn_scssMo").click(function () {
-    $(this).next().fadeIn();
-    document.body.style.overflow = "hidden";
-  });
 
-  $(".publishing_content_btn .re_btn_scssTb").click(function () {
-    $(this).next().fadeIn();
-    document.body.style.overflow = "hidden";
-  });
+  function responsive_scss() {
+    $(".publishing_content_btn .re_btn_scssMo").click(function () {
+      $(this).next().fadeIn();
+      document.body.style.overflow = "hidden";
+    });
 
-  $(".close").click(function () {
-    $(".tb_pop ,.mo_pop , .pu_modal, .pu_modal2, .pu_modal3").stop(true, true).fadeOut();
-    document.body.style.overflow = "unset";
-  });
+    $(".publishing_content_btn .re_btn_scssTb").click(function () {
+      $(this).next().fadeIn();
+      document.body.style.overflow = "hidden";
+    });
+
+    $(".close").click(function () {
+      $(".tb_pop ,.mo_pop").stop(true, true).fadeOut();
+      document.body.style.overflow = "unset";
+    });
+
+    window.addEventListener("click", function (event) {
+      let responsive_tb_pop = document.querySelectorAll(".tb_pop");
+
+      let responsive_mo_pop = document.querySelectorAll(".mo_pop");
+
+      responsive_tb_pop.forEach(function (element) {
+        if (event.target === element) {
+          element.style.display = "none";
+          document.body.style.overflow = "unset";
+        }
+      });
+      responsive_mo_pop.forEach(function (element) {
+        if (event.target === element) {
+          element.style.display = "none";
+          document.body.style.overflow = "unset";
+        }
+      });
+    });
+  }
+  responsive_scss();
+
+  /* mo-all-page mobile btn */
+  function mo_all_page_scss() {
+    $(".publishing_content_btn .mo_all_scss-btn").click(function () {
+      $(this).next().fadeIn();
+      document.body.style.overflow = "hidden";
+    });
+
+    $(".mo_all_close.close").click(function () {
+      $(".mo_all_pop").stop(true, true).fadeOut();
+      document.body.style.overflow = "unset";
+    });
+
+    window.addEventListener("click", function (event) {
+      let mo_all_pop = document.querySelectorAll(".mo_all_pop");
+
+      mo_all_pop.forEach(function (element) {
+        if (event.target === element) {
+          element.style.display = "none";
+          document.body.style.overflow = "unset";
+        }
+      });
+    });
+  }
+  mo_all_page_scss();
 });
-
 /* section3-1 design modal */
 $(".design_wrap li").click(function () {
   //클래스 tabContentWarp li를 클릭했을때
@@ -273,5 +320,48 @@ rotateRight.addEventListener("click", () => {
     cube.classList.add("activeRight__left-front");
     cube.style.height = "300vh";
     cube_face_back.style.zIndex = "-1";
+  }
+});
+
+/* onepage view page modal */
+let desert39_modal = document.querySelector(".desert39-modal");
+let desert39_modal_btn = document.querySelector(".de39-view-btn");
+let desert39_closeBtn = document.querySelector(".desert39-close");
+
+let krispy_donut_modal = document.querySelector(".krispy-donut-modal");
+let krispy_donut_modal_btn = document.querySelector(".krispy-view-btn");
+let krispy_donut_closeBtn = document.querySelector(".krispy-donut-close");
+
+desert39_modal_btn.addEventListener("click", function () {
+  desert39_modal.style.display = "block";
+  document.body.style.overflow = "hidden";
+});
+
+desert39_closeBtn.addEventListener("click", function () {
+  desert39_modal.style.display = "none";
+  document.body.style.overflow = "unset";
+});
+
+window.addEventListener("click", function (event) {
+  if (event.target == desert39_modal) {
+    desert39_modal.style.display = "none";
+    document.body.style.overflow = "unset";
+  }
+});
+
+krispy_donut_modal_btn.addEventListener("click", function () {
+  krispy_donut_modal.style.display = "block";
+  document.body.style.overflow = "hidden";
+});
+
+krispy_donut_closeBtn.addEventListener("click", function () {
+  krispy_donut_modal.style.display = "none";
+  document.body.style.overflow = "unset";
+});
+
+window.addEventListener("click", function (event) {
+  if (event.target == krispy_donut_modal) {
+    krispy_donut_modal.style.display = "none";
+    document.body.style.overflow = "unset";
   }
 });

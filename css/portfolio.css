@@ -505,7 +505,10 @@ h6 {
   margin-top: 10px;
 }
 
-.publishing_content_btn > span {
+.publishing_content_btn > span,
+.de39-view-btn,
+.krispy-view-btn,
+.mo_all_scss-btn {
   padding: 0 15px;
   text-align: center;
   border: 1px solid #ddd;
@@ -514,8 +517,12 @@ h6 {
   margin-right: 15px;
   font-family: var(--engsubfont);
   cursor: pointer;
+  font-size: 1.7rem;
 }
-.publishing_content_btn > span:hover {
+.publishing_content_btn > span:hover,
+.de39-view-btn:hover,
+.krispy-view-btn:hover,
+.mo_all_scss-btn:hover {
   border-radius: 10px;
   color: #fff;
   background-color: var(--maincolor);
@@ -523,9 +530,7 @@ h6 {
 
 .mo_pop,
 .tb_pop,
-.pu_modal,
-.pu_modal2,
-.pu_modal3 {
+.mo_all_pop {
   display: none;
   position: fixed;
   left: 0;
@@ -541,6 +546,13 @@ h6 {
 .tb_pop_inner {
   position: absolute;
   top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mo_all_pop_inner {
+  position: absolute;
+  bottom: -6%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -699,6 +711,10 @@ h6 {
 }
 
 /* section2-3 */
+/* 2-3-1 */
+.mo-pc-all-page-screen-box {
+  width: 60%;
+}
 
 /* section3 ~ 3-1 */
 .section3 {
@@ -944,6 +960,45 @@ h6 {
   text-align: center;
 }
 
+/* one page  view page modal */
+.desert39-modal,
+.krispy-donut-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.desert39-modal-content,
+.krispy-donut-modal-content {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  height: 100%;
+}
+
+.close {
+  color: #fff;
+  font-size: 9rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: -63px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* section common */
 .section1,
 .section1-1,
@@ -1103,7 +1158,11 @@ h6 {
 /* 2-2 */
 .cgv_all_tie,
 .desert39_all_tie,
-.krispy-kreme_all_tie {
+.krispy-kreme_all_tie,
+/* 2-3 */
+.hyundai_all_tie,
+.mongze_all_tie,
+.namyang_all_tie {
   width: 100%;
   height: 100%;
   position: relative;
@@ -1117,7 +1176,11 @@ h6 {
 /* 2-2 */
 .cgv__inner,
 .desert39__inner,
-.krispy-kreme__inner {
+.krispy-kreme__inner,
+/* 2-3 */
+.hyundai__inner,
+.mongze__inner,
+.namyang__inner {
   width: 30%;
   background: #f1f1f1;
   box-shadow: inset -27px -27px 54px #d6d6d6, inset 27px 27px 54px #ffffff;
@@ -1134,7 +1197,11 @@ h6 {
 /* 2-2 */
 .cgv__inner li > ol,
 .desert39__inner li > ol,
-.krispy-kreme__inner li >ol {
+.krispy-kreme__inner li >ol,
+/* 2-3 */
+.hyundai__inner li > ol,
+.mongze__inner li > ol,
+.namyang__inner li > ol {
   font-size: 2rem;
   color: #333;
   line-height: 5rem;
@@ -1146,17 +1213,23 @@ h6 {
 /* 2-2 */
 .cgv__textbox > h3,
 .desert39__textbox > h3,
-.krispy-kreme__textbox > h3 {
+.krispy-kreme__textbox > h3,
+/* 2-3 */
+.hyundai__textbox >h3,
+.mongze__textbox >h3,
+.namyang__textbox >h3 {
   font-family: var(--engsubfont);
 }
 
 .responsive-screen-box,
-.onpage-screen-box {
+.onpage-screen-box,
+.mo-pc-all-page-screen-box.pc {
   width: 50%;
 }
 
 .responsive-screen-box li > img,
-.onpage-screen-box > li > img {
+.onpage-screen-box > li > img,
+.mo-pc-all-page-screen-box > li > img {
   width: 100%;
 }
 
@@ -1165,7 +1238,8 @@ h6 {
 .webtrend-page-img,
 .cgv-page-img,
 .desert39-page-img,
-.krispy-kreme-donut-page-img {
+.krispy-kreme-donut-page-img,
+.hyundai-page-img {
   background-size: 100%;
   height: 565px;
   width: 100%;
