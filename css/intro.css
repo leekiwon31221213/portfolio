@@ -1,0 +1,228 @@
+@import url(./portfolio.css);
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #bbf7d4;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.giwon_logo {
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: logo_hide 2s linear both;
+  animation-delay: 4.5s;
+}
+
+.logo_ani {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 29%;
+  left: 42%;
+}
+
+@keyframes logo_hide {
+  0% {
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.container {
+  position: absolute;
+  bottom: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  animation: logo_hide 2s linear both;
+  animation-delay: 4.5s;
+  justify-content: center;
+}
+
+.container > span {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.container > p {
+  margin-bottom: 19px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+}
+
+.container > p > strong {
+  font-size: 19px;
+  font-weight: 600;
+  color: royalblue;
+}
+
+.box {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all 2s ease;
+  z-index: 2100;
+}
+
+.load:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -25px;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  -webkit-animation: load10g 3s ease-in-out infinite;
+  animation: load10g 3s ease-in-out infinite;
+  box-shadow: 0 0.5px 2px #9f6604;
+}
+
+.load {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  top: 230%;
+  left: -73%;
+  border-radius: 50%;
+  -webkit-animation: load10m 3s ease-in-out infinite;
+  animation: load10m 3s ease-in-out infinite;
+  box-shadow: 0 0.5px 2px #9f6604;
+}
+
+.load::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  -webkit-animation: load10d 3s ease-in-out infinite;
+  animation: load10d 3s ease-in-out infinite;
+  box-shadow: 0 0.5px 2px #9f6604;
+}
+
+@-webkit-keyframes load10g {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+@keyframes load10g {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@-webkit-keyframes load10m {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+@keyframes load10m {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@-webkit-keyframes load10d {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+@keyframes load10d {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

@@ -1317,6 +1317,7 @@ h6 {
 }
 
 .publishing_content_btn > span,
+.publishing_content_btn > button > a .device-js-window,
 .de39-view-btn,
 .krispy-view-btn,
 .mo_all_scss-btn,
@@ -1331,7 +1332,12 @@ h6 {
   cursor: pointer;
   font-size: 1.7rem;
 }
+.publishing_content_btn > button > a .device-js-window {
+  padding: 15px;
+}
+
 .publishing_content_btn > span:hover,
+.publishing_content_btn > button > a .device-js-window:hover,
 .de39-view-btn:hover,
 .krispy-view-btn:hover,
 .mo_all_scss-btn:hover,

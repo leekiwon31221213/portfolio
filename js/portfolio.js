@@ -159,7 +159,7 @@ function de_modal(target) {
   let index = target.attr("data-index");
   // 변수 index는 타겟의 data-index요소의 속성을 저장한다
 
-  modal_img.html("<img src='./img/viewpage/" + target.attr("data-img") + "_view.png' alt='.'>");
+  modal_img.html("<img src='../img/viewpage/" + target.attr("data-img") + "_view.png' alt='.'>");
 
   /* 변수 modal_img(.modal_wd_inner li p)에 html("")을 출력한다.
   이미지 방에 뷰페이지 방에있는 이미지를 불러오며 de_modal(target)==.design_wrap li에
