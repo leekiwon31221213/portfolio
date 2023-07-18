@@ -813,6 +813,11 @@ h6 {
   text-align: center;
   padding-top: 35%;
 }
+.design-content > h4 {
+  font-family: var(--engsubfont);
+  font-size: 2.2rem;
+  margin: 1rem;
+}
 
 .design-content_inner:hover .design-content {
   opacity: 1;
