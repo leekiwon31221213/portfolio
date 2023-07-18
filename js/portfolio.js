@@ -114,6 +114,24 @@ $(document).ready(function () {
     });
   }
   mo_all_page_scss();
+
+  /* typing effect */
+  window.instance = new TypeIt(".typing", {
+    speed: 100,
+  })
+    .type("")
+    .pause(500)
+    .delete(4)
+    .pause(500)
+    .type("ring.")
+    .pause(500)
+    .delete()
+    .pause(500)
+    .options({
+      speed: 25,
+    })
+    .type("")
+    .go();
 });
 /* section3-1 design modal */
 $(".design_wrap li").click(function () {
@@ -198,6 +216,9 @@ function responsive_bgPosition() {
   let cgv_bgPosition = document.querySelector(".cgv-page-img");
   let desert39_bgPosition = document.querySelector(".desert39-page-img");
   let krispy_kreme_bgPosition = document.querySelector(".krispy-kreme-donut-page-img");
+  let hyundai_bgPosition = document.querySelector(".hyundai-page2-img");
+  let mongze_bgPosition = document.querySelectorAll(".mongze-page-img-js");
+  let namyang_bgPosition = document.querySelector(".namyang-page-img");
 
   jimssa_bgPosition.addEventListener("mouseenter", function () {
     this.style.backgroundPosition = "0 100%";
@@ -243,6 +264,34 @@ function responsive_bgPosition() {
   });
 
   krispy_kreme_bgPosition.addEventListener("mouseleave", function () {
+    this.style.backgroundPosition = "0 0";
+  });
+
+  hyundai_bgPosition.addEventListener("mouseenter", function () {
+    this.style.backgroundPosition = "0 100%";
+  });
+
+  hyundai_bgPosition.addEventListener("mouseleave", function () {
+    this.style.backgroundPosition = "0 0";
+  });
+
+  mongze_bgPosition.forEach(function (mouse_event) {
+    mouse_event.addEventListener("mouseenter", function () {
+      this.style.backgroundPosition = "0 100%";
+    });
+  });
+
+  mongze_bgPosition.forEach(function (mouse_event) {
+    mouse_event.addEventListener("mouseleave", function () {
+      this.style.backgroundPosition = "0 0";
+    });
+  });
+
+  namyang_bgPosition.addEventListener("mouseenter", function () {
+    this.style.backgroundPosition = "0 100%";
+  });
+
+  namyang_bgPosition.addEventListener("mouseleave", function () {
     this.style.backgroundPosition = "0 0";
   });
 }
@@ -327,10 +376,12 @@ rotateRight.addEventListener("click", () => {
 let desert39_modal = document.querySelector(".desert39-modal");
 let desert39_modal_btn = document.querySelector(".de39-view-btn");
 let desert39_closeBtn = document.querySelector(".desert39-close");
-
 let krispy_donut_modal = document.querySelector(".krispy-donut-modal");
 let krispy_donut_modal_btn = document.querySelector(".krispy-view-btn");
 let krispy_donut_closeBtn = document.querySelector(".krispy-donut-close");
+let namyang_modal = document.querySelector(".namyang-modal");
+let namyang_modal_btn = document.querySelector(".namyang-view-btn");
+let namyang_modal_closeBtn = document.querySelector(".namyang-close");
 
 desert39_modal_btn.addEventListener("click", function () {
   desert39_modal.style.display = "block";
@@ -362,6 +413,23 @@ krispy_donut_closeBtn.addEventListener("click", function () {
 window.addEventListener("click", function (event) {
   if (event.target == krispy_donut_modal) {
     krispy_donut_modal.style.display = "none";
+    document.body.style.overflow = "unset";
+  }
+});
+
+namyang_modal_btn.addEventListener("click", function () {
+  namyang_modal.style.display = "block";
+  document.body.style.overflow = "hidden";
+});
+
+namyang_modal_closeBtn.addEventListener("click", function () {
+  namyang_modal.style.display = "none";
+  document.body.style.overflow = "unset";
+});
+
+window.addEventListener("click", function (event) {
+  if (event.target == namyang_modal) {
+    namyang_modal.style.display = "none";
     document.body.style.overflow = "unset";
   }
 });

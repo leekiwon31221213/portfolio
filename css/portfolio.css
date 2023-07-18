@@ -466,15 +466,7 @@ h6 {
   margin-top: 20px;
   border-radius: 7px;
   max-width: 724px;
-
   border-radius: 7px;
-}
-.cgv-page-img,
-.desert39-page-img,
-.krispy-kreme-donut-page-img {
-  top: 0;
-  max-width: 739px;
-  border-radius: 5px;
 }
 
 .period,
@@ -503,29 +495,6 @@ h6 {
 .publishing_content_btn {
   display: flex;
   margin-top: 10px;
-}
-
-.publishing_content_btn > span,
-.de39-view-btn,
-.krispy-view-btn,
-.mo_all_scss-btn {
-  padding: 0 15px;
-  text-align: center;
-  border: 1px solid #ddd;
-  transition: 0.5s;
-  box-sizing: border-box;
-  margin-right: 15px;
-  font-family: var(--engsubfont);
-  cursor: pointer;
-  font-size: 1.7rem;
-}
-.publishing_content_btn > span:hover,
-.de39-view-btn:hover,
-.krispy-view-btn:hover,
-.mo_all_scss-btn:hover {
-  border-radius: 10px;
-  color: #fff;
-  background-color: var(--maincolor);
 }
 
 .mo_pop,
@@ -619,6 +588,14 @@ h6 {
   width: 100%;
 }
 
+.cgv-page-img,
+.desert39-page-img,
+.krispy-kreme-donut-page-img {
+  top: 0;
+  max-width: 739px;
+  border-radius: 5px;
+}
+
 .cgv-page-img {
   background-image: url(../img/project/cgv_project.png);
   transition: background-position 1s;
@@ -710,10 +687,88 @@ h6 {
   position: absolute;
 }
 
-/* section2-3 */
 /* 2-3-1 */
 .mo-pc-all-page-screen-box {
   width: 60%;
+  position: relative;
+}
+
+.hyundai-page1-img {
+  background-image: url(../img/device/hyundai_mo_intro.svg);
+}
+
+.hyundai-page2-img {
+  background-image: url(../img/project/hyundai_project1.png);
+  transition: background-position 2s;
+}
+
+.hyundai-page3-img {
+  background-image: url(../img/project/hyundai_project2.png);
+}
+
+/* 2-3-2 */
+
+.mongze-page1-img {
+  background-image: url(../img/device/mongze_mo_intro.svg);
+}
+
+.mongze-page2-img {
+  background-image: url(../img/project/mongze_project1.png);
+  transition: background-position 4s;
+}
+
+.mongze-page3-img {
+  background-image: url(../img/project/mongze_project2.png);
+  transition: background-position 4s;
+}
+
+/* 2-3-3 */
+.mo-pc-all-page-screen-box.pc {
+  width: 40%;
+}
+.namyang-page-img {
+  background-image: url(../img/project/namyang_project.png);
+  transition: background-position 10s;
+  top: 0;
+  left: 2.5%;
+  height: 322px;
+}
+
+/* 2-3-1.2.3 common */
+.mongze-page-img,
+.hyundai-page-img,
+.namyang-page-img {
+  max-width: 195px;
+  border-radius: 5px;
+  background-size: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-top: 20px;
+}
+.namyang-page-img {
+  max-width: 605px;
+}
+
+.hyundai-page1-img,
+.mongze-page1-img {
+  top: 17.5%;
+  left: 39.9%;
+  height: 300px;
+}
+
+.hyundai-page2-img,
+.mongze-page2-img {
+  top: 17%;
+  left: 13.5%;
+  height: 376px;
+}
+
+.hyundai-page3-img,
+.mongze-page3-img {
+  top: 17%;
+  right: 13.5%;
+  height: 376px;
 }
 
 /* section3 ~ 3-1 */
@@ -962,7 +1017,8 @@ h6 {
 
 /* one page  view page modal */
 .desert39-modal,
-.krispy-donut-modal {
+.krispy-donut-modal,
+.namyang-modal {
   display: none;
   position: fixed;
   z-index: 100;
@@ -975,7 +1031,8 @@ h6 {
 }
 
 .desert39-modal-content,
-.krispy-donut-modal-content {
+.krispy-donut-modal-content,
+.namyang-modal-content {
   transform: translate(-50%, -50%);
   top: 50%;
   position: absolute;
@@ -1016,7 +1073,8 @@ h6 {
 
 .section1-title > article > h2,
 .section2-title,
-.section3-title {
+.section3-title,
+.section4-title {
   flex: 1;
   text-align: center;
   font-size: 21rem;
@@ -1028,6 +1086,11 @@ h6 {
   animation: slide-in 1.2s ease-in-out both;
   white-space: nowrap;
   opacity: 1;
+}
+
+.section4-title {
+  font-size: 7rem;
+  -webkit-text-stroke: 1px #fff;
 }
 
 @keyframes slide-in {
@@ -1046,7 +1109,8 @@ h6 {
 
 .section1-title > article,
 .section2-main,
-.section3-main {
+.section3-main,
+.section4__inner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1222,8 +1286,7 @@ h6 {
 }
 
 .responsive-screen-box,
-.onpage-screen-box,
-.mo-pc-all-page-screen-box.pc {
+.onpage-screen-box {
   width: 50%;
 }
 
@@ -1238,8 +1301,7 @@ h6 {
 .webtrend-page-img,
 .cgv-page-img,
 .desert39-page-img,
-.krispy-kreme-donut-page-img,
-.hyundai-page-img {
+.krispy-kreme-donut-page-img {
   background-size: 100%;
   height: 565px;
   width: 100%;
@@ -1247,5 +1309,30 @@ h6 {
   background-repeat: no-repeat;
   position: absolute;
   margin-top: 20px;
+}
+
+.publishing_content_btn > span,
+.de39-view-btn,
+.krispy-view-btn,
+.mo_all_scss-btn,
+.namyang-view-btn {
+  padding: 0 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+  transition: 0.5s;
+  box-sizing: border-box;
+  margin-right: 15px;
+  font-family: var(--engsubfont);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+.publishing_content_btn > span:hover,
+.de39-view-btn:hover,
+.krispy-view-btn:hover,
+.mo_all_scss-btn:hover,
+.namyang-view-btn:hover {
+  border-radius: 10px;
+  color: #fff;
+  background-color: var(--maincolor);
 }
 /* section common end */
