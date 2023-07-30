@@ -1,3 +1,16 @@
+// let slide_2_1_li = document.querySelector(".section2-1-slide-list").children;
+
+// function slide_li_active(slide) {
+//   Array.from(slide).forEach((e, i) => {
+//     // e 인덱스 순서대로 불러오는거 i 0부터 인덱스 끝까지
+//     if (i === 1) {
+//       e.classList.add("active");
+//     } else {
+//       e.classList.remove("active");
+//     }
+//   });
+// }
+
 $(document).ready(function () {
   /* section2-1 slide */
   let slide2_1_Width = document.querySelector(".section2-1-slide-list > li").clientWidth;
@@ -27,6 +40,7 @@ $(document).ready(function () {
 
           $(".section2-1-slide-list > li").last().prependTo($(slide2_1_list));
           // .section2-1-slide-list에 마지막 li를 slide2_1_list 맨앞으로 보내라
+          // slide_li_active(slide_2_1_li);
         });
     } else if ($(this).hasClass("section2-1-next-btn")) {
       //만약 if가 아닐경우 ($(button.btn==this))에 section2-1-next-btn클래스를 가지고 있다면
@@ -38,6 +52,7 @@ $(document).ready(function () {
           /* $(변수 slide2_1_list) .css 스타일 적용 (왼쪽으로 slide2_1_list 만큼 마이너스 시켜라) */
           $(".section2-1-slide-list > li").first().appendTo($(slide2_1_list));
           // .section2-1-slide-list에 첫번째 li를 slide2_1_list 맨뒤로 보내라
+          // slide_li_active(slide_2_1_li);
         });
     }
   });

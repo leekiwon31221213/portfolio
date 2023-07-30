@@ -1,6 +1,7 @@
 @import url(scss_mobile.css);
 @import url(scss_tablet.css);
 @import url(scss_mo_mobile.css);
+
 html {
   font-size: 62.5%;
 }
@@ -444,6 +445,23 @@ h6 {
 .section2-1-3_contents {
   width: 100%;
 }
+
+/* .section2-1-1.active,
+.section2-1-2.active,
+.section2-1-3.active {
+  animation: fade 2s ease-in-out both;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
 
 .jimssa-page-img {
   background-image: url(../img/project/jimssa_project.png);
@@ -1088,10 +1106,22 @@ h6 {
   color: white;
   font-family: var(--engtitlefont);
   font-weight: 600;
-  animation: slide-in 1.2s ease-in-out both;
   white-space: nowrap;
   opacity: 1;
 }
+
+.text_ani.cube__face .section1-title.cube-title-ani > article > h2,
+.text_ani.cube__face .section2-title.cube-title-ani,
+.text_ani.cube__face .section3-title.cube-title-ani,
+.text_ani.cube__face .section4-title.cube-title-ani {
+  animation: slide-in 1.2s ease-in-out both;
+}
+/* .section1-title.active,
+.section2-title.active,
+.section3-title.active,
+.section4-title.active {
+  
+} */
 
 .section4-title {
   font-size: 7rem;

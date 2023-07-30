@@ -114,24 +114,6 @@ $(document).ready(function () {
     });
   }
   mo_all_page_scss();
-
-  /* typing effect */
-  window.instance = new TypeIt(".typing", {
-    speed: 100,
-  })
-    .type("")
-    .pause(500)
-    .delete(4)
-    .pause(500)
-    .type("ring.")
-    .pause(500)
-    .delete()
-    .pause(500)
-    .options({
-      speed: 25,
-    })
-    .type("")
-    .go();
 });
 /* section3-1 design modal */
 $(".design_wrap li").click(function () {
@@ -313,6 +295,26 @@ rotateLeft.addEventListener("click", () => {
     cube.classList.remove("activeRight__left-front");
     cube.classList.remove("activeLeft__right-front");
     cube.classList.add("activeLeft__front-left");
+    document.querySelector(".cube__face--front").classList.remove("text_ani");
+
+    /* typing effect */
+    // window.instance = new TypeIt(".typing", {
+    //   speed: 100,
+    // })
+    //   .type("")
+    //   .pause(500)
+    //   .delete(4)
+    //   .pause(500)
+    //   .type("ring.")
+    //   .pause(500)
+    //   .delete()
+    //   .pause(500)
+    //   .options({
+    //     speed: 25,
+    //   })
+    //   .type("")
+    //   .go();
+
     cube.style.height = "100vh";
     cube_face_back.style.zIndex = "-1";
   } else if (cubeFace === "left") {
@@ -320,6 +322,8 @@ rotateLeft.addEventListener("click", () => {
     cube.classList.remove("activeRight__back-left");
     cube.classList.remove("activeLeft__front-left");
     cube.classList.add("activeLeft__left-back");
+    document.querySelector(".cube__face--back").classList.add("text_ani");
+    document.querySelector(".typing").classList.remove("typing-active");
     cube.style.height = "300vh";
     cube_face_back.style.zIndex = "1";
   } else if (cubeFace === "back") {
@@ -327,6 +331,8 @@ rotateLeft.addEventListener("click", () => {
     cube.classList.remove("activeRight__right-back");
     cube.classList.remove("activeLeft__left-back");
     cube.classList.add("activeLeft__back-right");
+    document.querySelector(".cube__face--back").classList.remove("text_ani");
+    document.querySelector(".cube__face--right").classList.add("text_ani");
     cube.style.height = "400vh";
     cube_face_back.style.zIndex = "-1";
   } else if (cubeFace === "right") {
@@ -334,6 +340,8 @@ rotateLeft.addEventListener("click", () => {
     cube.classList.remove("activeRight__front-right");
     cube.classList.remove("activeLeft__back-right");
     cube.classList.add("activeLeft__right-front");
+    document.querySelector(".cube__face--right").classList.remove("text_ani");
+    document.querySelector(".cube__face--front").classList.add("text_ani");
     cube.style.height = "300vh";
     cube_face_back.style.zIndex = "-1";
   }
@@ -346,6 +354,8 @@ rotateRight.addEventListener("click", () => {
     cube.classList.remove("activeLeft__right-front");
     cube.classList.remove("activeRight__left-front");
     cube.classList.add("activeRight__front-right");
+    document.querySelector(".cube__face--front").classList.remove("text_ani");
+    document.querySelector(".cube__face--right").classList.add("text_ani");
     cube.style.height = "400vh";
     cube_face_back.style.zIndex = "-1";
   } else if (cubeFace === "right") {
@@ -353,6 +363,8 @@ rotateRight.addEventListener("click", () => {
     cube.classList.remove("activeRight__front-right");
     cube.classList.remove("activeLeft__back-right");
     cube.classList.add("activeRight__right-back");
+    document.querySelector(".cube__face--right").classList.remove("text_ani");
+    document.querySelector(".cube__face--back").classList.add("text_ani");
     cube.style.height = "300vh";
     cube_face_back.style.zIndex = "1";
   } else if (cubeFace === "back") {
@@ -360,6 +372,25 @@ rotateRight.addEventListener("click", () => {
     cube.classList.remove("activeRight__right-back");
     cube.classList.remove("activeLeft__left-back");
     cube.classList.add("activeRight__back-left");
+    document.querySelector(".cube__face--back").classList.remove("text_ani");
+
+    /* typing effect */
+    window.instance = new TypeIt(".typing", {
+      speed: 100,
+    })
+      .type("")
+      .pause(500)
+      .delete(4)
+      .pause(500)
+      .type("ring.")
+      .pause(500)
+      .delete()
+      .pause(500)
+      .options({
+        speed: 25,
+      })
+      .type("")
+      .go();
     cube.style.height = "100vh";
     cube_face_back.style.zIndex = "-1";
   } else if (cubeFace === "left") {
@@ -367,6 +398,9 @@ rotateRight.addEventListener("click", () => {
     cube.classList.remove("activeRight__back-left");
     cube.classList.remove("activeLeft__front-left");
     cube.classList.add("activeRight__left-front");
+    document.querySelector(".cube__face--left").classList.remove("text_ani");
+    document.querySelector(".cube__face--front").classList.add("text_ani");
+    document.querySelector(".typing").classList.remove("typing-active");
     cube.style.height = "300vh";
     cube_face_back.style.zIndex = "-1";
   }
