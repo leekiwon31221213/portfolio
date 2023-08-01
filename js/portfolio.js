@@ -298,22 +298,22 @@ rotateLeft.addEventListener("click", () => {
     document.querySelector(".cube__face--front").classList.remove("text_ani");
 
     /* typing effect */
-    // window.instance = new TypeIt(".typing", {
-    //   speed: 100,
-    // })
-    //   .type("")
-    //   .pause(500)
-    //   .delete(4)
-    //   .pause(500)
-    //   .type("ring.")
-    //   .pause(500)
-    //   .delete()
-    //   .pause(500)
-    //   .options({
-    //     speed: 25,
-    //   })
-    //   .type("")
-    //   .go();
+    window.instance = new TypeIt(".typing", {
+      speed: 100,
+    })
+      .type("")
+      .pause(500)
+      .delete(4)
+      .pause(500)
+      .type("ring.")
+      .pause(500)
+      .delete()
+      .pause(500)
+      .options({
+        speed: 25,
+      })
+      .type("")
+      .go();
 
     cube.style.height = "100vh";
     cube_face_back.style.zIndex = "-1";
@@ -391,6 +391,7 @@ rotateRight.addEventListener("click", () => {
       })
       .type("")
       .go();
+
     cube.style.height = "100vh";
     cube_face_back.style.zIndex = "-1";
   } else if (cubeFace === "left") {

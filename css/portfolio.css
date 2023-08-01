@@ -854,7 +854,7 @@ h6 {
 .design-ui-ux {
   width: 90%;
   margin: 0 auto;
-  height: 100vh;
+  height: calc(100vh - -10px);
   position: relative;
 }
 .design-2d_container {
@@ -1182,6 +1182,11 @@ h6 {
   box-sizing: content-box;
   position: absolute;
   bottom: 40px;
+}
+
+.section3 .section3-main .mouse-icon {
+  top: 45.5%;
+  bottom: unset;
 }
 
 .mouse-wheel {

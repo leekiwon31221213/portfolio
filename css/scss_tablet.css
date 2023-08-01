@@ -1,12 +1,10 @@
-@import url(common.css);
-
 .tablet .tablet_mockup {
   background-color: #333;
   width: 808px;
   height: 708px;
   position: relative;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   border-radius: 20px;
   box-shadow: 1px 1px 3px #999;
 }
