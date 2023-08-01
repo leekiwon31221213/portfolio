@@ -271,8 +271,13 @@ h6 {
   position: relative;
   height: 40vh;
 }
+.fourth-depth .portfolio-wire-frame-box {
+  display: flex;
+  flex-direction: column;
+}
 
-.fourth-depth > strong {
+.fourth-depth > strong,
+.portfolio-wire-frame-box > strong {
   color: var(--subcolor);
   font-weight: 600;
   margin: 20px 0 20px 0;
@@ -307,7 +312,7 @@ h6 {
   width: 100%;
   max-width: 500px;
   position: absolute;
-  bottom: 8px;
+  bottom: -8px;
   right: 100px;
   transition: 0.7s ease-in-out;
   opacity: 0;
@@ -320,6 +325,14 @@ h6 {
 .section1-1 .fourth-depth .etc_inner > li > img {
   width: 100%;
   max-width: 50px;
+}
+
+.portfolio-wire-frame-box > span {
+  display: inline-block;
+  width: 100%;
+  max-width: 110px;
+  line-height: 35px;
+  margin-right: unset;
 }
 
 /* section2 */
@@ -1351,6 +1364,7 @@ h6 {
   margin-top: 20px;
 }
 
+.portfolio-wire-frame-box > span,
 .publishing_content_btn > span,
 .publishing_content_btn > button > a .device-js-window,
 .de39-view-btn,
@@ -1370,7 +1384,7 @@ h6 {
 .publishing_content_btn > button > a .device-js-window {
   padding: 15px;
 }
-
+.portfolio-wire-frame-box > span:hover,
 .publishing_content_btn > span:hover,
 .publishing_content_btn > button > a .device-js-window:hover,
 .de39-view-btn:hover,
